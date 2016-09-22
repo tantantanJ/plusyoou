@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+ 
+<link rel="shortcut icon" href="img/lg.ico" />
+<link rel="stylesheet" href="css/anniu.css">
+<link rel="stylesheet" href="css/commonCss.css">
+
+<style> 
+	.denglu_content{
+		height:345px;
+		padding-top:10px;
+		width: 600px;
+		margin: 80px auto;
+		color: #474747;
+		overflow: hidden;
+		
+	}
+	.box input{
+		width:300px;
+		height:40px
+	}       
+	.denglu_content h1{
+		text-align:center;
+	}
+	.denglu_content h2{
+		text-align:center;
+	}
+	.css_btn_class {
+		margin-left:131px;
+		margin-top:15px;
+		height:30px;
+		width:371px;
+	}
+	.name-of-info {
+		width: 7rem;
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin-left:125px;
+	}
+</style>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/formValidator-4.1.3.js" type="text/javascript" charset="UTF-8"></script>
+<script src="js/formValidatorRegex.js" type="text/javascript" charset="UTF-8"></script>
+<script src="js/gongyong.js" type="text/javascript" charset="UTF-8"></script>
+<script>
+$(function(){
+	$('#msg_Title').html('请填写下面的信息后，完成重置密码');
+	var key = GetQueryString("key");
+    document.getElementById("pwdForm").action = 'register?action=newPWD&key=' + key;
+    
+    $.formValidator.initConfig({formID:"pwdForm",theme:"Default",submitOnce:true, mode:'AutoTip',onError:function(msg,obj,errorlist){
+		$("#errorlist").empty();
+		$.map(errorlist,function(msg){
+			$("#errorlist").append("<li>" + msg + "</li>")
+		});
+	}});
+	
+   	$('#zhuce-title').html('已有官方账号,<a href="denglu.html" style="color:#E60000;text-decoration:none">立即登录</a>');
+	$("#ZhuCeYouXiang").formValidator({onShow:"必填"})
+		.inputValidator({min:6,max:100,onError:"你输入的邮箱长度不正确"})
+		.regexValidator({regExp:"^([\\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$",onError:"你输入的邮箱格式不正确"});
+    $("#MiMa").formValidator({onShow:"必填",onCorrect:"&nbsp;"}).inputValidator({min:6,max:45,onError:"密码为6位以上字符"})
+        .regexValidator({regExp:"^(?!(?:123456|654321)$)",onError:"不能为简单密码"});
+    $("#repassword").formValidator({onShow:"必填",onCorrect:"&nbsp;"})
+        .inputValidator({min:6,onCorrect:"&nbsp;"}).compareValidator({desID:"MiMa",operateor:"=",onError:"两次密码不一致,请重新输入"});
+}) 
+
+</script>  
+
+</head>
+<body>
+ 	<div style="display:none">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1254933229'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1254933229%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+ 		</script>
+		<script type="text/javascript" src="http://js.users.51.la/17773524.js"></script>
+		<noscript><a href="http://www.51.la/?17773524" target="_blank"><img  alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" 
+			src="http://img.users.51.la/17773524.asp" style="border:none"/></a>
+		</noscript> 
+	</div>
+	
+    <div id="head_included"></div>
+    
+	<div class="denglu_content">
+		<div class="tishi"  style="margin-bottom:60px">
+			<h2 id="msg_Title" style="text-align:center">操作成功</h2>
+		</div>
+		<form action="" method="post" id="pwdForm" >
+			<table >
+			<tr>
+				<td><label class="name-of-info">注册邮箱：</label></td>
+	 			<td><input type="text" style="width:280px" id="ZhuCeYouXiang" name="ZhuCeYouXiang" placeholder="&nbsp;请填写您要重置密码的注册邮箱"/></td>
+	 			<td><div style="width: 220px; font-size:12px" id="ZhuCeYouXiangTip"></div></td>
+ 			</tr>
+			<tr>
+				<td><label class="name-of-info">新密码：</label></td>
+	 			<td><input type="password" id="MiMa" style="width:280px" name ="MiMa" placeholder="&nbsp;6位以上数字字母，不支持汉字"/></td>
+	 			<td><div style="width: 220px; font-size:12px" id="MiMaTip"></div></td>
+ 			</tr>
+			<tr>
+				<td><label class="name-of-info">确认密码：</label></td>
+	 			<td><input id="repassword" style="width:280px" type="password" placeholder="&nbsp;为防止输入错误，请再次输入密码"/></td>
+	 			<td><div style="width: 220px; font-size:12px" id="repasswordTip"></div></td>
+ 			</tr>
+ 			</table>
+    		<input type="submit" id="formBtn" class="css_btn_class" value="重置密码">
+		</form>
+	</div>
+    
+     <div id="foot_included"></div>          
+</body>
+</html>

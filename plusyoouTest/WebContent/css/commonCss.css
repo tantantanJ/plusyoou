@@ -1,0 +1,136 @@
+@CHARSET "UTF-8";
+
+/*汉字字体*/
+@font-face {
+	font-family: plusYoouStandard;
+	unicode-range: U+4E00-9FBF;
+	src: local(MS Song);
+}
+
+/*英文和数字字体 */
+@font-face {
+	font-family: plusYoouStandard;
+	unicode-range: U+00-024F;
+  	src: local(Arial);
+}
+
+html {
+	font-family: "Microsoft YaHei", "微软雅黑", plusyoouStandard, sans-serif;
+	font-weight: 100;
+	font-size:12px;
+	color: #212121;
+	letter-spacing: 0px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.fontAt9px {
+	font-family: "Microsoft YaHei", "微软雅黑", plusyoouStandard, sans-serif;
+	font-size: 10px;  
+    -webkit-transform: scale(0.85);  
+}
+.small-imgbtn {
+	padding: 0;
+	height: 14px;
+	width: 14px;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+.medium-imgbtn {
+	padding: 0;
+	height: 26px;
+	width: 26px;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+body {
+/* 	background-color: #dfeffc; */
+	line-height: 1.3rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1260px;
+	font-size: 14px;
+}
+
+input:not([type="submit"]){
+	padding: 2px;
+	margin: 2px 0px;
+	height: 20px;	
+}
+label {
+	padding: 2px 0px;
+	margin: 2px 0px;
+	height: 20px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+select {
+	padding: 2px;
+	margin: 2px 0px;
+	height: 20px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
+}
+
+.badge {
+  -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
+          
+  display: inline-block;
+  padding: 1px 11px;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1rem;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #999999;
+}
+.badge-narrow {
+  padding: 1px 5px;
+}
+.badge-warning {
+  background-color: #f89406;
+}
+.badge-inverse {
+  background-color: #333333;
+}
+
+input[type="checkbox"]:not([role="columnheader"]){
+	width: 13px;
+    height: 13px;
+    padding: 1px;
+    margin: 0px 5px 0px 0px;
+/*     vertical-align: text-top; */
+    position: relative;
+    top: 2px;
+    *overflow: hidden;
+}
+.py-3D-border {
+	border:#ffffcc 3px ridge;
+}
+
+.input-area {
+	font-size:1rem;
+	margin-bottom:5px;
+}
+
+.css_btn_class {
+	margin-left:-20px;
+	margin-top:10px;
+	height:32px;
+	width:286px;
+}
+
+.tishi {
+	color:#E60000;
+	margin:10px auto;
+	text-align:center;
+	font-size:1.2rem;
+	font-weight:bold
+}

@@ -1,0 +1,4 @@
+INFO 2015-05-06 00:34:59,935 (RegisterActive.java:38) - SELECT BiaoShi,GongHao,XingMing,email,MiMa FROM webuser WHERE YiYanZheng= FALSE AND YanZhengMa='3e925e2fa193a21c234f0ce641e5bb42'
+INFO 2015-05-06 00:34:59,966 (RegisterActive.java:41) - 错误验证码，key=3e925e2fa193a21c234f0ce641e5bb42;IP=182.139.203.195
+INFO 2015-05-06 18:39:28,981 (RegisterActive.java:38) - SELECT BiaoShi,GongHao,XingMing,email,MiMa FROM webuser WHERE YiYanZheng= FALSE AND YanZhengMa='3e925e2fa193a21c234f0ce641e5bb42'
+INFO 2015-05-06 18:39:28,997 (RegisterActive.java:41) - 错误验证码，key=3e925e2fa193a21c234f0ce641e5bb42;IP=118.113.207.204

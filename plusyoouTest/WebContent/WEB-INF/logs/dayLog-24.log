@@ -1,0 +1,21 @@
+DEBUG 2016-03-24 09:23:36,963 (SQLUtils.java:287) - UPDATE webuser SET MiMaLingPai = 'adb6d4dd5b379bb6d859c0fb901634d4', DengLuLingPai = '205eab7c726ce89e2e411404884610c7' WHERE ZhuCeYouXiang = '4734567@qq.com'
+INFO 2016-03-24 09:23:37,025 (SQLUtils.java:327) - 本次共更新1条记录
+INFO 2016-03-24 18:39:56,942 (WebRegister.java:182) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='947431337@qq.com' 
+INFO 2016-03-24 18:41:03,733 (WebRegister.java:182) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='cdxq@outlook.com' 
+INFO 2016-03-24 18:41:52,021 (WebRegister.java:182) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='2096608690@outlook.com' 
+INFO 2016-03-24 18:42:02,386 (WebRegister.java:182) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='2096608690@qq.com' 
+INFO 2016-03-24 18:42:57,186 (WebRegister.java:196) - SELECT COUNT(XingMing) AS CountNum FROM webuser WHERE XingMing='Test1' 
+INFO 2016-03-24 18:43:02,628 (WebRegister.java:121) - Insert into webuser (ZhuCeYouXiang, XingMing, MiMa, YanZhengMa, ShouJi, ZhuCeRiQi, ShengFen, ChengShi, DiZhi, GongSiMingCheng, GongSiGuiMo, YeWuLeiBie, ZhuYaoPinPai, ZhiWu, DianHua, ChuanZhen, MiMaLingPai) VALUES ('2096608690@qq.com', 'Test1', '8d37f70464d36dd9ba46a2e2a2324af5', 'f939068fe0846e2090522fa525a9c64d', '15202862466', '2016-03-24', NULL, NULL, NULL, 'Test', NULL, NULL, NULL, NULL, NULL, NULL, '5b7927f18fdd13af15d044d2ef08069e'); 
+DEBUG 2016-03-24 18:43:02,631 (SQLUtils.java:66) - Insert into webuser (ZhuCeYouXiang, XingMing, MiMa, YanZhengMa, ShouJi, ZhuCeRiQi, ShengFen, ChengShi, DiZhi, GongSiMingCheng, GongSiGuiMo, YeWuLeiBie, ZhuYaoPinPai, ZhiWu, DianHua, ChuanZhen, MiMaLingPai) VALUES ('2096608690@qq.com', 'Test1', '8d37f70464d36dd9ba46a2e2a2324af5', 'f939068fe0846e2090522fa525a9c64d', '15202862466', '2016-03-24', NULL, NULL, NULL, 'Test', NULL, NULL, NULL, NULL, NULL, NULL, '5b7927f18fdd13af15d044d2ef08069e'); 
+INFO 2016-03-24 18:43:02,643 (SQLUtils.java:106) - 本次共插入1条记录
+INFO 2016-03-24 18:43:04,348 (WebRegister.java:142) - 成功添加用户。邮箱：2096608690@qq.com
+INFO 2016-03-24 18:43:39,686 (RegisterActive.java:42) - SELECT ZhuCeYouXiang, XingMing, MiMa, MiMaLingPai FROM webuser WHERE YiYanZheng = FALSE AND YanZhengMa='f939068fe0846e2090522fa525a9c64d'
+DEBUG 2016-03-24 18:43:39,688 (SQLUtils.java:287) - UPDATE webuser SET YiYanZheng=1, YanZhengMa=NULL, YanZhengRiQi='2016-03-24', DengLuLingPai = '71d1e6cbc93de91547a2dd67cc381a2d' WHERE ZhuCeYouXiang = '2096608690@qq.com'
+INFO 2016-03-24 18:43:39,697 (SQLUtils.java:327) - 本次共更新1条记录
+INFO 2016-03-24 18:43:39,697 (RegisterActive.java:73) - INSERT INTO renyuanbiao (RenYuanGongHao, RenYuanXingMing, RenYuanXingBie, GangWeiXingZhi, GangWeiJiBie, ZhuYaoJueSe,KeShenPi, BuMenBiaoShi, CaoZuoMiMa, YunXuDengLu, ZhuoMianPeiZhi) VALUES ('Test1', 'Test1', '男', '注册用户', 0, '0Z', 1, 1, '8d37f70464d36dd9ba46a2e2a2324af5', 1, 'win12:Report11,win13:Report13,win21:FuncZ02,win22:Report12,win23:BriefingF01,win31:FuncZ03,win33:BriefingA01'); 
+DEBUG 2016-03-24 18:43:39,712 (SQLUtils.java:66) - INSERT INTO renyuanbiao (RenYuanGongHao, RenYuanXingMing, RenYuanXingBie, GangWeiXingZhi, GangWeiJiBie, ZhuYaoJueSe,KeShenPi, BuMenBiaoShi, CaoZuoMiMa, YunXuDengLu, ZhuoMianPeiZhi) VALUES ('Test1', 'Test1', '男', '注册用户', 0, '0Z', 1, 1, '8d37f70464d36dd9ba46a2e2a2324af5', 1, 'win12:Report11,win13:Report13,win21:FuncZ02,win22:Report12,win23:BriefingF01,win31:FuncZ03,win33:BriefingA01'); 
+INFO 2016-03-24 18:43:39,741 (SQLUtils.java:106) - 本次共插入1条记录
+INFO 2016-03-24 18:43:39,742 (RegisterActive.java:77) - resultInsert=1
+DEBUG 2016-03-24 18:47:01,841 (SQLUtils.java:287) - UPDATE webuser SET MiMaLingPai = '610a2e021f6799b1326424705c27f7cd', DengLuLingPai = '16eeef7c02349874bce04fb9414f2219' WHERE ZhuCeYouXiang = '2096608690@qq.com'
+INFO 2016-03-24 18:47:01,849 (SQLUtils.java:327) - 本次共更新1条记录
+INFO 2016-03-24 18:47:15,206 (GotoDemo.java:51) - 登录demo： userCode=Test1 password=8d37f70464d36dd9ba46a2e2a2324af5 PwdToken=16eeef7c02349874bce04fb9414f2219

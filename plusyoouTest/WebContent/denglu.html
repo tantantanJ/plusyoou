@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<title>登录</title>
+
+<link rel="icon" href="images/lg.png">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/gongyong.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+    if (GetQueryString("result") == "error"){
+    	$("#login_hint").html('账号或密码错误');  
+    } else if (GetQueryString("result") == "noactive"){
+    	$("#login_hint").html('账号未激活。请登录邮箱，激活账号。');
+    } else {
+    	$("#login_hint").html('&nbsp;');  
+    };
+})
+
+
+function resendActiveMail(){
+	$('#formBtn').attr('disabled', 'disabled');
+	$('#miscFunc a').addClass('not-active');
+	$('#miscFunc input').attr('disabled', 'disabled');
+	$('#loginForm [name="password"]').attr('disabled', 'disabled');
+	if (!$('[name="YouXiang"]').val()) {
+		var userCode = getCookieContent('UserCode');
+		if (userCode) {
+			$('[name="YouXiang"]').val(userCode);
+			$("#login_hint").html('请确认这个是您注册使用的邮箱');
+			$('[name="YouXiang"]').css('background','#e4f1fd').focus();
+			return;
+		} else {
+			$("#login_hint").html('请告诉我您注册使用的邮箱');
+			$('[name="YouXiang"]').css('background','#e4f1fd').focus();
+			return;
+		}
+	}
+	$.post('register', 'action=resendRegisterMail&YouXiang=' + $('[name="YouXiang"]').val(), function(data){
+		if($.trim(data) != 'ok') {
+			alert(data);
+		} else {
+			$("#login_hint").html('激活邮件已经发送到您的邮箱。请登录邮箱，激活账号。');
+		}
+	})
+	$('#formBtn').attr('disabled', '');
+	$('#miscFunc a').removeClass('not-active');
+	$('#miscFunc input').attr('disabled', '');
+	$('#loginForm [name="password"]').attr('disabled', '');
+}
+function resetPassword(){
+	$('#formBtn').attr('disabled', 'disabled');
+	$('#resendActiveMail a').addClass('not-active');
+	$('#miscFunc input').attr('disabled', 'disabled');
+	$('#loginForm [name="password"]').attr('disabled', 'disabled');
+	if (!$('[name="YouXiang"]').val()) {
+		var userCode = getCookieContent('UserCode');
+		if (userCode) {
+			$('[name="YouXiang"]').val(userCode);
+			$("#login_hint").html('请确认这个是您要重置密码的注册邮箱');
+			$('[name="YouXiang"]').css('background','#e4f1fd').focus();
+			return;
+		} else {
+			$("#login_hint").html('请告诉我您要重置密码的注册邮箱');
+			$('[name="YouXiang"]').css('background','#e4f1fd').focus();
+			return;
+		}
+	}
+	$.post('register', 'action=resetPWD&UserCode=' + $('[name="YouXiang"]').val(), function(data){
+		var URL = getSiteURL();
+		window.location.href = getSiteURL() + '/XinXiXianShi.html?active=' + $.trim(data);
+	})
+	$('#miscFunc a').addClass('not-active');
+	$("#login_hint").html('正在准备重置密码邮件，请稍候。');
+}
+</script>  
+
+<style>
+         body {
+            padding-top: 50px;
+            padding-bottom: 40px;
+            color: #5a5a5a;
+            background-color:#F8F8F8;
+            font-family: "Open Sans","Segoe UI","Helvetica",sans-serif;
+        }
+        .panel-body{
+            z-index:1;
+		    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26),0 2px 10px 0 rgba(0,0,0,.16);
+		    position: relative;
+		    border-radius: 6px;
+		    border-width: 0;
+		    background: #fff;
+        }
+        .subtitle {
+			    margin: 150px 0 50px 0;
+			    font-weight: 400;
+			    line-height: 1;
+                font-size: 30px;
+			}  
+        .row{
+            padding-top:20px;
+        }
+        .footer li{
+            color:#999;
+        } 
+        .footer a{
+            color:#999;
+        } 
+</style>
+
+</head>
+<body>
+
+	<div style="display:none">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1254933229'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1254933229%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+ 		</script>
+		<script type="text/javascript" src="http://js.users.51.la/17773524.js"></script>
+		<noscript><a href="http://www.51.la/?17773524" target="_blank"><img  alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" 
+			src="http://img.users.51.la/17773524.asp" style="border:none"/></a>
+		</noscript> 
+	</div>
+
+<div id='head_included'></div>
+
+	<div class="container">
+		    <h4 class="subtitle" style="text-align:center"><strong>登录即可免费享受官网提供的所有服务</strong></h4>
+	        <div class="row">
+	            <div class="col-md-4 col-md-offset-4">
+	                <div class="login-panel panel panel-default">
+	                    <div class="panel-body" style="background-color:#FFFFFF;">
+	                    	<h2 style="text-align:center;padding-bottom:15px">登录</h2>
+	                            <div id="login_hint" class="tishi">
+					            	&nbsp;
+								</div>
+	                       <form role="form" action="login?action=login" method="post" id="loginForm">
+	                            <fieldset>
+	                                <div class="form-group input-area">
+	                                    <input class="form-control" placeholder="输入邮箱" id="username" name="YouXiang" type="email" autofocus>
+	                                </div>
+	                                <div class="form-group input-area">
+	                                    <input class="form-control" placeholder="输入密码" id="password" name="password" type="password" value="">
+	                                </div>
+	                              
+	                                <div class="checkbox">
+	                                    <label>
+	                                        <small><input type="checkbox" name="rememberMe" checked /><strong style="color:#999;">记住我的登录状态</strong></small>
+	                                    </label>
+	                      	            <div style="float:right;" id="resendActiveMail" >
+		                              	    <a href="javascript:void resendActiveMail();" ><small><strong>重发注册激活邮件</strong></small></a>
+	                                    </div>
+	                                </div>
+	                               
+		                            <button id="miscFunc" type="submit" class="btn btn-lg btn-danger btn-block css_btn_class">登录</button>
+	                                <div class="foot">
+	                                	<br/> 
+<!-- 	                                  <div style="float:left">  -->
+<!--                                 	    <a href="javascript:void resetPassword();"><small><strong>忘记密码?</strong></small></a> -->
+<!--                                 	  </div>  -->
+                                
+                                	  <div style="float:right;">
+                                	     <small style="color:#999;" ><strong>还没有账号?</strong></small><a href="zhuce.html"><small style="font-weight:bold;">立即注册</small></a>
+                                	  </div> 
+                                	  <div style="clear:both"></div> 
+                               
+                                	
+                                	   
+		                            </div>
+	                            </fieldset>
+	                        </form>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	</div>
+  <div class="container">	
+    <div class="row footer">
+      <div class="col-md-7 col-md-offset-3">
+        <ul class="list-inline" style="margin-left:10px">
+          <li>©2015 Plusyoou Software Co., Ltd. All rights reserved. </li><li><a target="_blank" href="http://www.miitbeian.gov.cn/" >备案号：蜀ICP备14014237号</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+  
+</body>
+</html>

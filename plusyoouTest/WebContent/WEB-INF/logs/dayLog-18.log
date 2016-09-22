@@ -1,0 +1,5 @@
+DEBUG 2016-03-18 16:57:15,607 (SQLUtils.java:287) - UPDATE webuser SET MiMaLingPai = '2c98a8dc2637f0a5ce250f5a154c0fd6', DengLuLingPai = '1a03756de60d33d7ec83412244701f76' WHERE ZhuCeYouXiang = '4734567@qq.com'
+INFO 2016-03-18 16:57:15,650 (SQLUtils.java:327) - 本次共更新1条记录
+INFO 2016-03-18 18:14:06,412 (WebRegister.java:187) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='12345@erf.com' 
+INFO 2016-03-18 18:29:06,544 (WebRegister.java:187) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='123@123.com' 
+INFO 2016-03-18 18:43:06,413 (WebRegister.java:187) - SELECT COUNT(ZhuCeYouXiang) AS CountNum FROM webuser WHERE ZhuCeYouXiang='123213432@1.2' 

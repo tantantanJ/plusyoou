@@ -1,0 +1,2 @@
+DEBUG 2016-03-25 10:58:03,367 (SQLUtils.java:287) - UPDATE webuser SET MiMaLingPai = '610a2e021f6799b1326424705c27f7cd', DengLuLingPai = 'd1aef42b29d2aed3b071af8cdcd1784f' WHERE ZhuCeYouXiang = '2096608690@qq.com'
+INFO 2016-03-25 10:58:03,418 (SQLUtils.java:327) - 本次共更新1条记录

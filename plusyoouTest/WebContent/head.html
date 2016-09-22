@@ -1,0 +1,84 @@
+﻿    <style>
+
+        .navbar{
+            background:#202020;
+        }
+
+        #navbar li:hover{
+            background:black;
+        }
+        #navbar a{
+            color:#d7d7d7;
+        }
+        .navbar-header img{
+            padding-right:30px;
+        }
+        .py-header-log{
+            padding-top:15px  
+        }
+      
+    </style>
+
+<!-- 顶部导航 -->
+
+
+<div class="container summary">                
+ <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.html" class="py-header-logo-img"> <img src="images/logo.png" width="150" height="46" alt="PLUSYOOU"></a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav pull-left">
+                            <li><a href="index.html"><strong>首页</strong></a></li>
+                            <li><a href="chanpinjieshao.html" ><strong>产品介绍</strong></a></li>
+                            <li><a href="GotoDemo" target="_blank"><strong>在线体验</strong></a></li>
+                            <li><a href="index.html#fuwu"><strong>服务支持</strong></a></li>
+                            <li><a href="liaojiewomen.html"><strong>关于我们</strong></a></li>
+                            <li><a href="#footer"><strong>联系我们</strong></a></li>
+                        </ul>
+                       
+                          <div id="login_info_area" class="nav navbar-nav pull-right py-header-log"></div>
+                       
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- 关于-->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="modal-label">请先登录</h4>
+                </div>
+                <div class="modal-body">
+                    <p>注册并登录可免费在线体验我们产品。通过选择不同的角色，体验各种职责操作。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+    <script>
+      $("nav.navbar-fixed-top").autoHidingNavbar();
+    </script>
+
+                        

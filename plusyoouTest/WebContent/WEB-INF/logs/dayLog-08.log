@@ -1,0 +1,5 @@
+DEBUG 2015-05-08 17:05:05,215 (LoginCheck.java:37) - action=login  gonghao=null  Goto=null
+DEBUG 2015-05-08 17:05:05,248 (LoginCheck.java:37) - action=login  gonghao=null  Goto=null
+DEBUG 2015-05-08 17:06:41,018 (LoginCheck.java:37) - action=login  gonghao=null  Goto=null
+DEBUG 2015-05-08 17:07:33,728 (LoginCheck.java:37) - action=login  gonghao=null  Goto=null
+DEBUG 2015-05-08 17:08:28,902 (LoginCheck.java:37) - action=demo  gonghao=harryhuo  Goto=null
